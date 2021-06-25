@@ -24,7 +24,7 @@ console.log(getDigit(12345, 3));
 console.log(getDigit(12345, 4));
 console.log(getDigit(12345, 5)); // out of bounds
 
-console.log(digitCount(12345));
-console.log(digitCount(789));
+console.log(digitCount(12345)); // 5
+console.log(digitCount(789)); // 3
 
-console.log(mostDigits([23, 432, 1000001, 5431, 1, 32561]));
+console.log(mostDigits([23, 432, 1000001, 5431, 1, 32561])); // 7 (1000001)
