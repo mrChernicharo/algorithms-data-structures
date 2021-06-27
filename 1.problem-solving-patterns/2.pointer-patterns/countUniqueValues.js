@@ -7,7 +7,7 @@ function countUniqueValues(arr) {
   let p1 = 0;
   for (let p2 = 1; p2 < arr.length; p2++) {
     let notEqual = arr[p1] !== arr[p2];
-    // console.log([arr[p1],'<->', arr[p2], 'different: '+ notEqual])
+    console.log([arr[p1], "<->", arr[p2], "different: " + notEqual]);
 
     if (notEqual) {
       p1++;

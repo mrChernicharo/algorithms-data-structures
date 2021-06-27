@@ -175,10 +175,10 @@ class SinglyLinkedList {
     // node => 0
 
     for (let i = 0; i < this.length; i++) {
-      next = node.next; // next =>    1 => 2  => 3
-      node.next = prev; // prev => null => 1 => 2
-      prev = node; // prev =>         1 => 2 => 3
-      node = next; // node =>         0 => 1 => 2
+      next = node.next; // next =>      1 => 2 => 3 => 4
+      node.next = prev; // prev =>   null => 0 => 1 => 2
+      prev = node; // prev      =>      1 => 2 => 3 => 4
+      node = next; // node      =>      0 => 1 => 2 => 3
     }
 
     return this;
