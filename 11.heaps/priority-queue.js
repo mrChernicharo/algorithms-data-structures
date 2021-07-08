@@ -89,8 +89,21 @@ class Node {
 }
 
 let ER = new PriorityQueue();
-ER.enqueue("common cold", 5);
+ER.enqueue("common cold", 6);
 ER.enqueue("gunshot wound", 1);
+ER.enqueue("broken leg", 2);
+ER.enqueue("low fever", 5);
 ER.enqueue("high fever", 4);
 ER.enqueue("broken arm", 2);
 ER.enqueue("glass in foot", 3);
+ER.enqueue("burned skin", 4);
+console.log(ER);
+
+ER.dequeue();
+console.log(ER);
+
+ER.dequeue();
+console.log(ER);
+
+// Insertion / removal => O(log n)
+// Search(who cares?) => O(n)
