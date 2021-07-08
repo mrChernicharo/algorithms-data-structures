@@ -63,3 +63,12 @@ console.log(tree.DFSPreOrder());
 console.log(tree.DFSPostOrder());
 console.log(tree.DFSInOrder());
 console.log(tree.DFSReversedOrder());
+
+// Depth-First uses much less space because it doesn't use a queue, so store nodes in memory
+// This is true unless you have a one sided tree, whith nodes to only one direction
+//... which is preety rare
+
+// whilist DFSInOrder gives you the elements in their underlying order
+// DFSPreOrder might be useful if you want to export the tree in a manner you'd be able to reconstruct it somewhere else
+// with PreOrder you have the root coming first, while in InOrder, you loose track of the tree's format,
+// note that the root stays somewhere in the middle in InOrder
