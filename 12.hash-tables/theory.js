@@ -33,6 +33,7 @@
 //          INPUT            |               OUTPUT
 
 // 'hello!'           == hashing func =>  03928475620
+// 'hello!'           == hashing func =>  03928475620
 // 'Hello!'           == hashing func =>  98376221104
 // 'a'                == hashing func =>  74389234716
 // '02&839a394awq'    == hashing func =>  34321039480
