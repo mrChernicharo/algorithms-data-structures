@@ -26,20 +26,20 @@ Thinking about our function, we will have a base case:
 // Naive
 // Time Complexity O2^m+n
 // Space Complexity Om+n
-function gridTraveller(m, n) {
+function gridTraveler(m, n) {
 	if (m === 0 || n === 0) return 0;
 	if (m === 1 && n === 1) return 1;
 
-	return gridTraveller(m - 1, n) + gridTraveller(m, n - 1);
+	return gridTraveler(m - 1, n) + gridTraveler(m, n - 1);
 }
 
-console.log(gridTraveller(3, 3)); // 6
-console.log(gridTraveller(10, 6)); // 2002
+console.log(gridTraveler(3, 3)); // 6
+console.log(gridTraveler(10, 6)); // 2002
 
 // Better memoized version
 // Time Complexity On+m
 // Space Complexity Om+n
-function memoizedGridTraveller(m, n, memo = {}) {
+function memoizedGridTraveler(m, n, memo = {}) {
 	const key = m + ',' + n;
 	if (key in memo) return memo[key];
 
@@ -47,16 +47,16 @@ function memoizedGridTraveller(m, n, memo = {}) {
 	if (m === 1 && n === 1) return 1;
 
 	memo[key] =
-		memoizedGridTraveller(m - 1, n, memo) +
-		memoizedGridTraveller(m, n - 1, memo);
+		memoizedGridTraveler(m - 1, n, memo) +
+		memoizedGridTraveler(m, n - 1, memo);
 
 	return memo[key];
 }
 
-console.log(memoizedGridTraveller(3, 3)); // 6
-console.log(memoizedGridTraveller(10, 6)); // 2002
-console.log(memoizedGridTraveller(18, 18)); // 2333606220
-console.log(memoizedGridTraveller(24, 30)); // 352870329957600
+console.log(memoizedGridTraveler(3, 3)); // 6
+console.log(memoizedGridTraveler(10, 6)); // 2002
+console.log(memoizedGridTraveler(18, 18)); // 2333606220
+console.log(memoizedGridTraveler(24, 30)); // 352870329957600
 
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
