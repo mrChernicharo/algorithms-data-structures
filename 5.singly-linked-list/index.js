@@ -189,10 +189,11 @@ export class SinglyLinkedList {
 	}
 }
 
-// const list = new SinglyLinkedList();
+const list = new SinglyLinkedList();
 
-// list.push(0);
-// list.push(1);
+list.push(0).push(1);
+
+console.log(list);
 // list.push(2);
 // list.push(3);
 // list.print();

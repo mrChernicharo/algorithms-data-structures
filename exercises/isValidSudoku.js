@@ -1,4 +1,5 @@
 function isValidSudoku(board) {
+	const start = Date.now();
 	const rows = Array(9)
 		.fill([])
 		.map(row => []);
@@ -21,11 +22,12 @@ function isValidSudoku(board) {
 
 	// making squares
 	let sqIdx = 0;
-	for (let j = 0; j < 3; j++) {
-		for (let i = 0; i < 3; i++) {
-			let row = i * 3;
-			let col = j * 3;
+	for (let i = 0; i < 3; i++) {
+		for (let j = 0; j < 3; j++) {
+			let row = j * 3;
+			let col = i * 3;
 			fillSquare(row, col, sqIdx);
+
 			sqIdx++;
 		}
 	}
@@ -55,6 +57,8 @@ function isValidSudoku(board) {
 	for (let array of [...rows, ...cols, ...squares]) {
 		if (!checkIsValid(array)) return false;
 	}
+	const elapesd = Date.now();
+	console.log(elapesd - start);
 
 	return true;
 }
@@ -84,4 +88,4 @@ const invalidBoard = [
 ];
 
 console.log(isValidSudoku(board));
-console.log(isValidSudoku(invalidBoard));
+// console.log(isValidSudoku(invalidBoard));
