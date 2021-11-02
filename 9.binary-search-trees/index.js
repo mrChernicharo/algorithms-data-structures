@@ -71,13 +71,13 @@ export class BinarySearchTree {
 		const visited = [];
 		if (this.root === null) return [];
 
+		traverse(this.root);
+
 		function traverse(node) {
 			if (node.left) traverse(node.left);
 			visited.push(node.value);
 			if (node.right) traverse(node.right);
 		}
-
-		traverse(this.root);
 
 		return visited;
 	}
