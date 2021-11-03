@@ -18,5 +18,14 @@ var containsDuplicate = function (nums) {
 	return result;
 };
 
+// const containsDuplicate = nums => {
+// 	const set = new Set(nums);
+
+// 	const res = nums.length > set.size;
+
+// 	console.log(res);
+// 	return res;
+// };
+
 containsDuplicate([1, 1, 1, 3, 3, 4, 3, 2, 4, 2]);
 containsDuplicate([1, 2, 3, 4]);

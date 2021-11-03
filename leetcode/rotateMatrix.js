@@ -5,19 +5,26 @@ const rotateMatrix = matrix => {
 		let x = 0, y = matrix.length - 1;
 		x < matrix.length / 2 && y >= 0 && x < y;
 		x++, y--
-	)
+	) {
 		for (
 			let i = 0, j = matrix.length - 1;
 			i < matrix.length / 2 && j >= 0;
 			i++, j--
-		)
-			[matrix[x][i], matrix[i][y], matrix[j][x], matrix[y][j]] = [
+		) {
+			// prettier-ignore
+			[
+				matrix[x][i],
+				matrix[i][y],
+				matrix[j][x],
+				matrix[y][j]
+			] = [
 				matrix[j][x],
 				matrix[x][i],
 				matrix[y][j],
-				matrix[i][y],
+				matrix[i][y]
 			];
-
+		}
+	}
 	console.log(matrix);
 	return matrix;
 };
