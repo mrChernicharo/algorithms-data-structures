@@ -8,6 +8,7 @@ const myEdges = [
 	['g', 'h'],
 ];
 
+// turn edges list into an adjacency list
 const buildGraph = edges => {
 	const adjList = {};
 
@@ -24,6 +25,7 @@ const buildGraph = edges => {
 	return adjList;
 };
 
+// the actual algo: initializes our guard Set for visited nodes and calls the recursive depthFistSearch
 const hasPath = (edges, src, dst) => {
 	const visited = new Set();
 	const graph = buildGraph(edges);

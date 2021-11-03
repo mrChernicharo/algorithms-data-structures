@@ -6,20 +6,40 @@ function bestSum(targetSum, numbers) {
 
 	for (let num of numbers) {
 		const rest = targetSum - num;
-
 		const combination = bestSum(rest, numbers);
 
 		if (combination !== null) {
 			const result = [...combination, num];
-
 			//prettier-ignore
 			if (shortestCombination === null || combination.length < shortestCombination.length) {
-				shortestCombination = [...combination, num];
+					shortestCombination = [...combination, num];
+				}
+		}
+	}
+	return shortestCombination;
+}
+
+function bestSum2(targetSum, numbers) {
+	if (targetSum === 0) return [];
+	if (targetSum < 0) return null;
+
+	let bestResult = [];
+
+	for (let num of numbers) {
+		const diff = targetSum - num;
+
+		const resultsArr = bestSum(diff, numbers);
+
+		// prettier-ignore
+		if (resultsArr !== null) {
+			
+			if (resultsArr.length < bestResult.length || bestResult.length === 0) {
+				bestResult = [...resultsArr, num];
 			}
 		}
 	}
 
-	return shortestCombination;
+	return bestResult;
 }
 
 console.log(bestSum(7, [2, 3, 7]));
